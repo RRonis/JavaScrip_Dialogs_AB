@@ -24,6 +24,7 @@
 #### Bildes piemērs ANSI kodējums
 
 ![image](http://www.ecowin.org/aulas/resources/tables/asciitable.jpg)
+Avots: www.ecowin.org
 
 Koda paraugs
 ````
