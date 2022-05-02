@@ -1,7 +1,7 @@
 # 1. Nodarbības pieraksti
 
 ## Tēmas:
-* "View Page Source" lai skatītu lapas HTML kodu 
+* "View Page Source" (peles labais t.) lai skatītu lapas HTML kodu 
 * Tagi (neredzmie simboli starp tiem, piemēram Enter)
 * Simboli (ANSI kodējums) ir cilvēkam uztveramie
 * binārais kods (8 bitu kombinācija)
