@@ -2,9 +2,9 @@
 
 ## Tēmas:
 * "View Page Source" (peles labais t.) lai skatītu lapas HTML kodu 
-* Tagi (neredzmie simboli starp tiem, piemēram Enter)
-* Simboli (ANSI kodējums) ir cilvēkam uztveramie
-* binārais kods (8 bitu kombinācija)
+* Tagi (neredzmie simboli starp tiem, kā piemēram Enter, Tab utml.)
+* Simboli (ANSI kodējums) ir cilvēkam uztveramie simboli
+* binārais kods (8 bitu kombinācija) ir datoram saprotamie
 * [GitHub](https://github.com/) reģistrācija (GitHub ir VSC sistēma - _Version Control System_)
 * .md faili ('markdown' faili formatējas, readme.md arī automatiski nolasās )
 
@@ -20,6 +20,9 @@
 * Bullet1
 * Bullet2
 * ...
+- Bullet 1
+- Bullet 2
+- ...
 
 #### Bildes piemērs ANSI kodējums
 
