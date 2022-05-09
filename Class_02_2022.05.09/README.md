@@ -1,10 +1,8 @@
-# 1. Nodarbības pieraksti
+# 2. Nodarbības pieraksti
 
 ## Tēmas:
-* "View Page Source" (peles labais t.) lai skatītu lapas HTML kodu 
-* Tagi (neredzmie simboli starp tiem, kā piemēram Enter, Tab utml.)
-* Simboli (ANSI kodējums) ir cilvēkam uztveramie simboli
-* binārais kods (8 bitu kombinācija) ir datoram saprotamie
+* Uzlikām IDE (Integrated Development Environmnet) rīku -  Visual Studio Code
+* 
 * [GitHub](https://github.com/) reģistrācija (GitHub ir VSC sistēma - _Version Control System_)
 * .md faili ('markdown' faili formatējas, readme.md arī automatiski nolasās )
 
