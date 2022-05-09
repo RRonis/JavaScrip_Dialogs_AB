@@ -2,15 +2,20 @@
 
 ## Tēmas:
 * Uzlikām IDE (Integrated Development Environmnet) rīku -  Visual Studio Code
-* 
-* [GitHub](https://github.com/) reģistrācija (GitHub ir VSC sistēma - _Version Control System_)
-* .md faili ('markdown' faili formatējas, readme.md arī automatiski nolasās )
+* Savienosim VSC ar savu GitHub kontu/repozitoriju
+* Skaitļi dažādās sistēmās (bin, dec, hex, oct)
+* krāsas (RGB)
 
 
-
-# .md failu FORMATĒŠANA:  
-## Virsraksts
+## VSC links ar GitHub
 ### Apakšvirsraksts
+
+### GitHub BASH (Terminālis)
+
+#### Komandas: 
+* git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+* ls (list command) 
 
 **teksts Boldā**   
 *teksts Italic*
