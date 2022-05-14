@@ -13,10 +13,16 @@
 
 ### GitHub BASH (Terminālis)
 
-#### Komandas: 
+#### Terminal Komandas: 
 * git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
-* ls (list command) 
+* ls (list command)
+* pwd (pašreizējais Active folderis)
+* ls (list komanda)
+* ls -a (list all - ieskaitot Hidden)
+* ls -la (list all with details)
+* ls -la * dialogs * (list all kur kāds no failiem satur tekstu 'dialogs')
+* cd (current directory)
 
 
 ### 3) Skaitļi/simboli dažādās sistēmās
