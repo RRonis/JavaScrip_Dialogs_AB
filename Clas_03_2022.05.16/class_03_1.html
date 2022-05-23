@@ -3,20 +3,72 @@
 <html>
 
 <head>
-    <title>Page Title</title>
+<title>Lapas tituls</title>
+<link rel="icon" href="../images/icon.png" type="image/x-icon">
+<!-- Favicon pieņem ierobežota izmēra png failus - standarts 32x32 bet daži browser akceptē arī 200x200pix -->
 
-    <link rel="icon" href="...images/icon.png" type="image/x-icon">
-    <!-komentārs-/
-
+<style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 350px;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(odd) {
+          background-color: #dddddd91;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
+    <h1>Skaitļu sistēmas</h1>
+    <p>Tabula zemāk attēlo manu iniciāļu "N" un "S" attēlojumu dažādās skaitļu sistēmās</p>
+
+    <h2>Tabula</h2>
+    <table>
+        <colgroup>
+            <col style="color:red">
+            <col style="color:yellow">
+            <col style="color:blue">
+          </colgroup>
+        <tr style="background-color:rgba(30, 143, 255, 0.75)">
+          <th >Sistēma</th>
+          <th>N burts</th> 
+          <th>S burts</th>
+        </tr>
+        <tr>
+          <td>binārā</td>
+          <td>1001110</td> 
+          <td>1010011</td>          
+        </tr>
+        <tr>
+            <td>decimālā</td>
+            <td>78</td> 
+            <td>83</td>          
+        </tr>
+        <tr>
+            <td>heksadecimālā</td>
+            <td>4e</td> 
+            <td>53</td>          
+        </tr>
+        <tr>
+          <td>oktālā</td>
+          <td>116</td> 
+          <td>123</td>          
+        </tr>
+      </table>
+
+<!--     
     <pre>hhh
         sjsjs   jak 
                saaaa
-    </pre>
+    </pre> -->
 
 
 

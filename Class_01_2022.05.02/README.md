@@ -39,3 +39,6 @@ Github reģistrācija
 Links:  
 Create sophisticated formatting for your prose and code on **GitHub** with simple syntax
 [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#quoting-text)
+
+MSB - most significant bit
+LSB - less significnt bit 

@@ -1,26 +1,32 @@
 # 3. Nodarbības pieraksti
 
 ## Tēmas:
-* 1) ,,,
-* 2) ,,,
-* 3) ,,,
+* 1) HTML
+* 2) Tagi
+* 3) Elementi un to atribūti
 * 4) ,,,
 
 --------------------------------------------------------
 
-### 1) VSC - Visual Studio Code uzlikts uz Mac
-### 2) VSC salinkots ar GitHub
+### 1) HTML  
+Hyper Text Markup Language
 
-### Elementi un elementu atribūti 
- 
+### 2) Tagi  
+<></> atverošais un aizverošais  
+Elementu Alfabētiskais saraksts: https://www.w3schools.com/TAgs/default.asp
+  
+### 3) Elementi un elementu atribūti 
 HTML Attributes https://www.w3schools.com/html/html_attributes.asp
 
 Elementu piemēri  
 a  
 href  
 image  
-alt  
-<a href="https://www.w3schools.com">Visit W3Schools</a>"
+alt   
+
+Atribūts elementam "a" (saites adrese): 
+<a href="https://www.w3schools.com">Visit W3Schools</a>  
+Atribūts vienmēr ir atverošajā elementa daļā
 
 ### Elementu atribūti 
 Atribūtus raksta ar pēdiņām
@@ -49,8 +55,8 @@ bin dec hex oct
 NS: 
 binārais        1001110 1010011 
 decimālais      110 115 
-HEX             6e 73
-OCTAL           156 163
+HEX             4e 53
+OCTAL           116 123
 
 
 Links:  
