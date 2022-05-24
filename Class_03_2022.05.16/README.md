@@ -51,13 +51,18 @@ Uztaisīt tabulu ar HTML elementu palīdzību uztaisīt tabulu
 ar sava vārda burtiem 
 Vārda pirmajam burtam un uzvārda pirmajam burtam katru savā kolonnā
 bin dec hex oct
+  
+<br>  
+Kalkulātors pārejai tarp skaitļu sistēmām:  
+https://cryptii.com/pipes/text-decimal
 
-NS: 
-binārais        1001110 1010011 
-decimālais      110 115 
-HEX             4e 53
-OCTAL           116 123
 
+NS:   
+binārais        1001110 1010011   
+decimālais      110 115   
+HEX             4e 53  
+OCTAL           116 123  
+<br>
 
 Links:  
 Create sophisticated formatting for your prose and code on **GitHub** with simple syntax
