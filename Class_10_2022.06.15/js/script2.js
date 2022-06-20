@@ -3,8 +3,9 @@ var vards_uzvards = "Jāni Bērziņ,";
 var nauda = 15000;
 var proc = 0.0001
 var proc_uzkr = 0;
-var izmaksa_ikgadu = 1; 
-// 0 ja izmaksājam 1 ja neaizmaksājam 
+var izmaksa_ikgadu = 0; 
+// izmaksa_ikgadu=0 izmaksājam ik gadu 
+// izmaksa_ikgadu=1 ja neaizmaksājam ik gadu
 
 var pelna_1 = ((nauda + proc_uzkr * izmaksa_ikgadu) * proc * 1) * 1;
 var pelna_1_str = pelna_1.toFixed(2);
