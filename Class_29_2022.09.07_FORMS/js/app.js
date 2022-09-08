@@ -8,6 +8,15 @@ form.addEventListener("submit", function (event) {
 	event.preventDefault();
 });
 	
+// validate email format (regulārās izteiksmes paraugs)
+const emailRegex =
+/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+const email = input.value.trim();
+if (!emailRegex.test(email)) {
+return showError(input, invalidMsg);
+}
+
 
 
 // Oriģināls:
