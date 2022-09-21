@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(#8fb9de,white) no-repeat;
+    
+    }
+
+#mainDiv {
+    margin-top:25%;
+    border:1px black solid;
+}
+#minus , #plus{
+    height:35px;
+    width:35px;
+    border:1px black solid;
+    border-radius:50%;
+}
+#minus:hover{
+    background-color:rgb(121, 150, 147);    
+    border:none;
+}
+#plus:hover{
+    background-color:rgb(121, 150, 147);
+    border:none;
+}
+#izmest:hover{
+    background-color:rgb(193, 125, 125);    
+    border:none;
+}
+#numberPlace {
+    margin-left:5px;
+    margin-right:5px;
+}
+
+#submit {
+    border:none;
+    height:25px;
+}
+#bottom{
+    margin: 10px;
+    /* margin-top:90%; */
+}
