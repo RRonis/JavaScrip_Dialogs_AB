@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../styl.css/style.css" />
+    <script defer src="../js/script.js"></script>
+  </head>
+  <body>
+    <main id="main-holder">
+      <h1 id="login-header">Pieteikšanās resursam</h1>
+      <div id="login-error-msg-holder">
+        <img src="/images/security.png" alt="logo" />
+        <p id="login-error-msg">
+          Nepareizs lietotājvārds
+          <span id="error-msg-second-line"
+            >un/vai <br />
+            parole</span
+          >
+        </p>
+      </div>
+      <form id="login-form">
+        <input
+          type="text"
+          name="username"
+          id="username-field"
+          class="login-form-field"
+          placeholder="Lietotājvārds"
+        />
+        <input
+          type="password"
+          name="password"
+          id="password-field"
+          class="login-form-field"
+          placeholder="Parole"
+        />
+        <input type="submit" value="Ielogoties" id="login-form-submit" />
+      </form>
+    </main>
+  </body>
+</html>

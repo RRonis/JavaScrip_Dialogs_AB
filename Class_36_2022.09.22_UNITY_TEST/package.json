@@ -5,6 +5,6 @@
     },
     "scripts": {
         "test": "jest",
-        "test1": "echo \"Error: no test specified\" && exit 1"
+        "test1": "echo \"Kļūda: neviens tests nav pieteikts\" && exit 1"
     }
 }

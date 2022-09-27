@@ -38,9 +38,10 @@ Ext.define ('EAM.custom.external_WSWREQ', {
         var vPriority=Ext.ComponentQuery.query ('[name=priority]')[0].getValue();
             Ext.ComponentQuery.query ('[name=priority]')[0].inputEl.dom.style.backgroundColor='transparent';
         if (vPriority=='B' || vPriority=='C')
-            {Ext.ComponentQuery.query ('[name-priority]')[0].inputEl.dom.style.backgroundColor='#F78181'};
+            {Ext.ComponentQuery.query ('[name-priority]')[0].inputEl.dom.style.backgroundColor='#F78181';
+            console.log ('B vai C');};
         if (vPriority=='A' || vPriority=='*')
-            {Ext.ComponentQuery.query ('[name=priority]')[0].inputEl.dom.style.backgroundColor='#F7BE81'};
+            {Ext.ComponentQuery.query ('[name=priority]')[0].inputEl.dom.style.backgroundColor='#ff9999'};
         }
         catch (err) {};
     } // end priorityColor f.
