@@ -98,3 +98,18 @@ rinda1 = 'Ja Jūs ieguldīsiet to mūsu banka uz vienu 1 gadu, tad pēc gada kā
 console.log('rinda1 '+rinda1);
 document.getElementById("bankas teksts1").innerHTML = rinda1;
 
+
+// - mainīgā pārdefinēšana
+
+var text = "";
+console.log('  "  "  ');
+console.log(" '  ' ");
+console.log("text mainīgā vērtība pēc definēšanas:");
+console.log(text);
+text = text + "jauns teksta fragments";
+console.log(text);
+
+document.getElementById("paragrafs_ar_tekstu").innerHTML = text;
+
+text = text + " un vēl viens fragments";
+console.log(text);
