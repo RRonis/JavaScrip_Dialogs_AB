@@ -1,0 +1,103 @@
+<head>
+    <style>
+/* (A) CUSTOM "STAR ICON ONLY" FONT */
+/* https://icomoon.io/ */
+@font-face {
+  font-family: "icomoon";
+  src: url(icomoon.woff);
+}
+ 
+/* (B) STAR RATING WRAPPER */
+.starwrap { display: flex; }
+ 
+/* (C) STAR ICON */
+.star {
+  font-family: "icomoon" !important;
+  font-size: 24px; color: #d1d1d1;
+  font-style: normal; font-weight: normal; font-variant: normal;
+  text-transform: none; line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.star::before { content: "\e9d9"; }
+.star.on { color: #ffe000; }
+
+    </style>
+</head>
+<body>
+<html>
+
+<!-- (B) GENERATE STAR RATING HERE -->
+<div id="demo" class="starwrap">
+    <div class="star on"></div>
+    <div class="star on"></div>
+    <div class="star on"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+ 
+<!-- (C) INIT STAR RATING -->
+<script>
+
+function starry (instance) {
+  // (A) SET DEFAULTS
+  if (instance.max === undefined) { instance.max = 5; }
+  if (instance.now === undefined) { instance.now = 0; }
+  if (instance.now > instance.max) { instance.now = instance.max; }
+  if (instance.disabled === undefined) { instance.disabled = false; }
+ 
+  // (B) GENERATE STARS
+  instance.target.classList.add("starwrap");
+  for (let i=1; i<=instance.max; i++) {
+    // (B1) CREATE HTML STAR
+    let s = document.createElement("div");
+    s.className = "star";
+    instance.target.appendChild(s);
+ 
+    // (B2) HIGHLIGHT STAR
+    if (i <= instance.now) { s.classList.add("on"); }
+    if (!instance.disabled) {
+      // (B3) ON MOUSE OVER
+      s.onmouseover = () => {
+        let all = instance.target.getElementsByClassName("star");
+        for (let j=0; j<all.length; j++) {
+          if (j<i) { all[j].classList.add("on"); }
+          else { all[j].classList.remove("on"); }
+        }
+      };
+ 
+      // (B4) ON CLICK
+      if (instance.click) { s.onclick = () => { instance.click(i); }; }
+    }
+  }
+ 
+  // (C) GET NUMBER OF SELECTED STARS
+  instance.target.getstars = () => {
+    return instance.target.querySelectorAll(".on").length;
+  };
+}
+
+
+
+starry({
+  // (C1) REQUIRED
+  target: document.getElementById("demo"),
+ 
+  // (C2) OPTIONAL
+  max: 5,
+  now: 3,
+  // disabled: true,
+  click : (stars) => { alert(stars); }
+});
+
+
+
+// (D) TO GET NUMBER OF STARS PROGRAMMATICALLY
+var stars = document.getElementById("demo").getstars();
+console.log(stars);
+
+
+
+    
+</script>
+</body>

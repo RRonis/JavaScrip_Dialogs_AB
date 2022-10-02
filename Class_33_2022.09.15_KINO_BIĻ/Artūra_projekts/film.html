@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Movie Seat Booking</title>
+  </head>
+  <body onload="create_html_left_top()">
+    <a href="index.html"><h1>CINEMA</h1></a>
+  
+ <table width = 100% >
+ <td id="poster" width = 20%>
+  <div id="ticket_price"></div> 
+  
+  <h3>Cast:</h3>
+  <div id="cast"></div>
+
+  <h3>Description</h3>
+  <div id="description"></div>
+  
+ </td>
+ <td id="_youtube" width = 40%>
+    <br><h2 id="movie_name"></h2>
+
+    <div class="container">
+        <table style="display: flex" ><td>
+          <div  class="kino" id="kino"></div>
+        </td></table>
+    </div>
+    <p id="checkout" class="text">
+      You have selected <span id="count">0</span>
+      seats for a price of <span id="total">0 </span> EUR
+      <button onclick="checkout_submit()">Checkout</button>
+      <button onclick="history.back()">Back</button>
+    </p>
+    
+    <ul id="showcase" class="showcase" width =10%>
+      <li>
+        <div class="seat"></div>
+        <small>Available</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="seat bought"></div>
+        <small>Bought</small>
+      </li>
+
+      <li>
+        <div class="seat occupied"></div>
+        <small>Occupied</small>
+      </li>
+    </ul>
+ </td>
+ <td width = 20% ><h3>Reviews</h3>
+  <p>Please rate movie:</p>
+  <p id="demo">Rate!</p>
+  <p id="stars">
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+  </p>
+
+
+
+
+</td> 
+
+ 
+ </table>
+ <script src="./js/script.js"></script>
+ </body>
+</html>

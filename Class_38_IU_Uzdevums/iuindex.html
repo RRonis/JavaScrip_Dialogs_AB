@@ -4,48 +4,38 @@
     <link rel="stylesheet" href="./js/iucss.css" />    
   </head>
   
-  <div class="container">
-    <form action="signup.html" method="post" id="signup">
-      <h1>Produktu pasūtīšana</h1>
-      <div class="inputs">
-
-        <!-- Ppodukta izvēle:  -->
-        <span class="product-container">
-          <label>Produkts:</label>
-          
-          <select id="product">
-            <option value="0">Asorti</option>
-            <option value="1">Bekona</option>
-            <option value="2">Garneļu tīģeris</option>
-            <option value="3">Kebaba</option>
-            <option value="4">Prošuto</option>
-          </select>
-          <label for="form-control-quantity" class="active">Skaits: </label>
-              <input type="number" name="quantity" value="1" pattern="[1-9][0-9]*" inputmode="numeric" id="form-control-quantity" step="1" min="1" max="10" tabindex="+1" data-text-summary-count="1">
-          <button type="submit" id='pievienot' class="btn"><i class="pievienosana"></i>Pievienot pasūtījumu</button>
-        </span>
-
-        <!-- <label for="name">Vārds:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your fullname" />
-        <small></small>
-         -->
-      </div>      
-      <div class="field">
-                
-      </div>
-    </form>
-  </div>
-
-
   <body>
-		<div class="btn">
-                            
-      
+	
+    <div class="container">
+      <form onsubmit="pievienot()" id="jaunsPasutijums">
+        <h1>Produktu pasūtīšana</h1>
+        <div class="inputs">
+          <!-- Ppodukta izvēle un pasūtīšana:  -->
+          <span class="product-container">
+            <label>Produkts:</label>
+            <select id="product">
+              <option value="0">Asorti</option>
+              <option value="1">Bekona</option>
+              <option value="2">Garneļu tīģeris</option>
+              <option value="3">Kebaba</option>
+              <option value="4">Prošuto</option>
+            </select>
+            <label>Skaits: </label>
+                <input type="number" name="quantity" value="1" pattern="[1-9][0-9]*" inputmode="numeric" id="form-control-quantity" step="1" min="1" max="10" tabindex="+1" data-text-summary-count="1">
+            <button type="button" value="save" id="save" class="btn">Pievienot pasūtījumu</button>
+          </span>
   
-
-  
-      
+          <!-- <label for="name">Vārds:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your fullname" />
+          <small></small>
+           -->
+        </div>      
+        <div class="field">
+                  
+        </div>
+      </form>
     </div>
+
         
     <h2>Produktu pasūtījumu tabula</h2>
 
@@ -82,7 +72,7 @@
       </tr>      
     </table>
 
-    <script src=".js/iuscript.js"></script>
+    <script src="./js/iuscript.js"></script>
 
    </body>
   </html>

@@ -1,0 +1,51 @@
+angular.css 
+
+
+
+Dinamiski ielādē
+div content_inner wrap
+=> views
+=> view container
+*****************
+Biļešu izvēle
+<div _ngcontent-wjm-c190="" class="cart-heading-wrapper ng-star-inserted">
+
+
+Timeris
+<span _ngcontent-wjm-c108="" class="timer-text">
+
+
+*****************
+
+Bildīte + apraksts
+<app-event _ngcontent-wjm-c190="" class="main-event ng-star-inserted" >
+
+
+********
+
+
+
+
+
+Der zināt utt
+<div _ngcontent-ytj-c190="" class="selection-wrapper ng-star-inserted">
+
+*********
+Ticket selection
+tickets-selection-wrapper
+
+Biļešu cenas
+_ngcontent-ytj-c190
+
+Zāle
+<div _ngcontent-ytj-c188="" class="map">
+data-seat-id="6409982"
+
+g- grupē elementus
+<g class="place" 
+	id="place_6408939" 
+	transform="translate(341.875,113)" 
+	style="cursor:pointer;fill:#d0d0d0" data-seat-id="6408939">
+	<circle cx="3" cy="3" r="6"></circle>
+	<text class="place_detail seat_text" x="3" y="3" dy="0.35em" stroke-width="0" 	text-anchor="middle" font-size="6.9" style="display: none;">13</text>
+</g>

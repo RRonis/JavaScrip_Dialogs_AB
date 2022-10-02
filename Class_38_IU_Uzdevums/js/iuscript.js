@@ -1,11 +1,14 @@
 const produkti = ["Asorti", "Bekona", "Garneļu tīģeris","Kebaba","Prošuto"];
+const productSelect = document.getElementById('product');
+
 
 // Izlasām local storage
 
 // Ierakstam local storage saturu html
 
 // FUNKCIJA pievienot pasūtijumu
-btn.addEventListener('click',pievienot); // palaiž f-ciju pievienot
+
+// btn.addEventListener('click',pievienot);
 function pievienot() {
     localStorage.setItem("lastname", "Smith");
 }

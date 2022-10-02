@@ -1,0 +1,694 @@
+.cdk-overlay-container,
+.cdk-global-overlay-wrapper {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.cdk-overlay-container {
+  position: fixed;
+  z-index: 1000;
+}
+.cdk-overlay-container:empty {
+  display: none;
+}
+.cdk-global-overlay-wrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+}
+.cdk-overlay-pane {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+}
+.cdk-overlay-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+}
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 1;
+}
+.cdk-high-contrast-active .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0.6;
+}
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.32);
+}
+.cdk-overlay-transparent-backdrop {
+  transition: visibility 1ms linear, opacity 1ms linear;
+  visibility: hidden;
+  opacity: 1;
+}
+.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0;
+  visibility: visible;
+}
+.cdk-overlay-connected-position-bounding-box {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 1px;
+  min-height: 1px;
+}
+.cdk-global-scrollblock {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
+:root {
+  --black: hsla(0, 0%, 20%, 1);
+  --white: hsl(0, 0%, 100%);
+  --purple-deep: hsl(256, 100%, 19%);
+  --purple-link: hsl(256, 100%, 35%);
+  --red-main: hsl(348, 100%, 50%);
+  --red-light: hsl(350, 98%, 61%);
+  --red-lighter: hsl(0, 100%, 95%);
+  --red-dark: hsl(353, 70%, 37%);
+  --yellow: hsl(44, 90%, 53%);
+  --yellow-lighter: hsl(55, 100%, 95%);
+  --yellow-light: hsl(44, 100%, 67%);
+  --yellow-dark: hsl(44, 100%, 41%);
+  --green-lighter: hsl(120, 100%, 95%);
+  --green-light: hsl(119, 53%, 62%);
+  --green: hsl(120, 53%, 49%);
+  --green-dark: hsl(119, 53%, 43%);
+  --gray-bg: hsla(240, 10%, 96%, 1);
+  --gray-lighter-2: hsla(204, 29%, 97%, 1);
+  --gray-lighter: hsla(220, 12%, 95%, 1);
+  --gray-light: hsla(210, 15%, 89%, 1);
+  --gray-default: hsla(212, 14%, 79%, 1);
+  --gray-dark: hsla(210, 6%, 59%, 1);
+  --gray-darker: hsla(210, 4%, 40%, 1);
+  --peach-3: hsl(23, 100%, 90%);
+  --error-color: var(--red-main);
+  --warning-color: var(--yellow);
+  --size-xs: 4px;
+  --size-sm: calc(var(--size-xs) * 2);
+  --size-md: calc(var(--size-xs) * 4);
+  --size-md-2: calc(var(--size-xs) * 6);
+  --size-lg: calc(var(--size-xs) * 8);
+  --size-xl: calc(var(--size-xs) * 12);
+  --gap-xs: var(--size-xs);
+  --gap-sm: var(--size-sm);
+  --gap-md: var(--size-md);
+  --gap-md-2: var(--size-md-2);
+  --gap-lg: var(--size-lg);
+  --gap-lg-2: calc(10 * var(--size-xs));
+  --gap-xl: var(--size-xl);
+  --gap-xxl: calc(3 * var(--size-md-2));
+  --font-xxs: 12px;
+  --font-xs: 13px;
+  --font-sm: 14px;
+  --font-md: 15px;
+  --font-lg: 16px;
+  --font-xl: 18px;
+  --font-xxl: 20px;
+  --radius-sm: 4px;
+  --radius-md-2: 5px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 13px;
+  --radius-xxl: 25px;
+  --main-background-color: var(--gray-bg);
+  --controls-padding-vertical: 10px;
+  --controls-padding-horizontal: 55px;
+  --controls-padding-vertical-mobile: 10px;
+  --controls-padding-horizontal-mobile: 8px;
+  --controls-padding-sm: var(--gap-xs);
+  --controls-height: 38px;
+  --controls-line-height: 18px;
+  --controls-height-sm: calc(var(--size-md) * 1.2);
+  --controls-transition-time: 0.25s;
+  --border: 1px solid var(--gray-light);
+  --block-background: var(--white);
+  --block-radius: var(--radius-lg);
+  --block-padding-sm: 12px;
+  --block-padding-md: var(--gap-md);
+  --block-padding-md-2: var(--gap-md-2);
+  --block-padding-lg: var(--gap-lg);
+  --block-padding-xl: var(--gap-xl);
+  --block-border-color: var(--gray-light);
+  --block-border-width: 1px;
+  --block-shadow: none;
+  --sub-block-background: var(--white);
+  --sub-block-radius: var(--radius-md);
+  --sub-block-padding-md: var(--gap-md);
+  --sub-block-padding-md-2: var(--gap-md-2);
+  --sub-block-border-color: var(--gray-light);
+  --sub-block-border-width: 1px;
+  --sub-block-shadow: none;
+  --block-radius-handset: var(--radius-md);
+  --text-primary-color: var(--black);
+  --text-success-color: var(--green);
+  --text-light-color: var(--gray-dark);
+  --text-dark-color: var(--gray-darker);
+  --text-secondary-color: var(--gray-default);
+  --text-highlighted-color: var(--purple-link);
+  --shadow-sm: 0px var(--size-xs) var(--size-md) rgba(211, 213, 255, 0.16),
+    0px 0px 2px rgba(211, 213, 255, 0.06), 0px 0px 1px rgba(211, 213, 255, 0.04);
+  --shadow-md: 0 var(--size-sm) var(--size-md) rgba(0, 0, 0, 0.15);
+  --icon-width-md: 16px;
+  --icon-height-md: 16px;
+  --icon-width-lg: 20px;
+  --icon-height-lg: 20px;
+  --icon-width: var(--icon-width-lg);
+  --icon-height: var(--icon-width-lg);
+  --colored-marker-width: 5px;
+  --checkbox-width: 20px;
+  --checkbox-height: 20px;
+  --checkbox-margin: var(--gap-sm);
+  --checkbox-border-radius: 4px;
+  --checkbox-background: var(--white);
+  --checkbox-checked-color: var(--purple-link);
+  --checkbox-border-color: var(--gray-default);
+  --checkbox-error-border: var(--error-color);
+  --checkbox-disabled-background: var(--gray-light);
+  --checkbox-disabled-color: var(--gray-dark);
+  --checkbox-disabled-border: var(--gray-dark);
+  --radio-margin: var(--gap-sm);
+  --radio-width: 20px;
+  --radio-height: 20px;
+  --radio-circle-radius: 5px;
+  --radio-circle-center: calc((var(--radio-width) - 2px) / 2);
+  --radio-border-color: var(--gray-default);
+  --radio-background: var(--white);
+  --radio-checked-color: var(--purple-link);
+  --radio-error-color: var(--error-color);
+  --radio-disabled-background: var(--gray-light);
+  --radio-disabled-color: var(--gray-dark);
+  --input-color: var(--text-primary-color);
+  --input-font-size: 16px;
+  --input-padding-vertival: calc(14px - var(--input-border-width));
+  --input-padding-horizontal: calc(18px - var(--input-border-width));
+  --input-padding: var(--input-padding-vertival) var(--input-padding-horizontal);
+  --input-height: var(--controls-height);
+  --input-transition-time: var(--controls-transition-time);
+  --input-border-radius: var(--radius-xxl);
+  --input-background: var(--gray-lighter-2);
+  --input-background-light: var(--white);
+  --input-border-width: 1px;
+  --input-border: var(--input-border-width) solid var(--input-border-color);
+  --input-border-color: var(--gray-light);
+  --input-placeholder-color: var(--gray-dark);
+  --input-focus-border: var(--gray-default);
+  --input-success-border: var(--text-success-color);
+  --input-success-color: inherit;
+  --input-error-border: var(--error-color);
+  --input-error-color: inherit;
+  --input-warning-border: var(--warning-color);
+  --input-warning-color: inherit;
+  --input-disabled-border: var(--gray-light);
+  --input-disabled-color: var(--gray-light);
+  --input-disabled-background: var(--gray-lighter);
+  --input-placeholder-disabled-color: var(--gray-default);
+  --button-border: 0;
+  --button-padding-vertical: 14px;
+  --button-padding-horizontal: var(--size-md-2);
+  --button-padding-vertical-mobile: var(--controls-padding-vertical-mobile);
+  --button-padding-horizontal-mobile: var(--controls-padding-horizontal-mobile);
+  --button-padding-vertical-sm: var(--gap-sm);
+  --button-padding-horizontal-sm: var(--gap-md);
+  --button-height: var(--controls-height);
+  --button-width-min: 88px;
+  --button-line-height: var(--controls-line-height);
+  --button-height-sm: var(--controls-height-sm);
+  --button-border-radius: var(--radius-xxl);
+  --button-transition-time: var(--controls-transition-time);
+  --button-icon-margin: var(--gap-sm);
+  --button-font-size: var(--font-lg);
+  --button-font-size-sm: var(--font-lg);
+  --button-default-color: var(--gray-darker);
+  --button-default-hover-background: var(--gray-light);
+  --button-default-focus-color: var(--gray-dark);
+  --button-default-disabled-background: var(--gray-lighter);
+  --button-default-disabled-color: var(--gray-default);
+  --button-primary-background: var(--green);
+  --button-primary-color: var(--white);
+  --button-primary-border: 1px solid var(--green);
+  --button-primary-hover-background: var(--green-light);
+  --button-primary-focus-background: var(--green-dark);
+  --button-primary-disabled-background: var(--gray-light);
+  --button-primary-disabled-color: var(--gray-dark);
+  --button-primary-outline-background: var(--white);
+  --button-primary-outline-color: var(--black);
+  --button-primary-outline-border-color: var(--green);
+  --button-primary-outline-hover-border-color: var(
+    --button-primary-hover-background
+  );
+  --button-primary-outline-focus-background: var(--white);
+  --button-primary-outline-focus-color: var(--green-dark);
+  --button-primary-outline-focus-border-color: var(--green-dark);
+  --button-secondary-background: var(--white);
+  --button-secondary-color: var(--black);
+  --button-secondary-border-color: var(--purple-link);
+  --button-secondary-hover-background: var(--purple-link);
+  --button-secondary-hover-color: var(--white);
+  --button-secondary-hover-border-color: var(--purple-link);
+  --button-secondary-focus-background: var(--purple-deep);
+  --button-secondary-focus-color: var(--white);
+  --button-secondary-focus-border-color: var(--purple-deep);
+  --button-secondary-disabled-background: var(
+    --button-primary-disabled-background
+  );
+  --button-secondary-disabled-color: var(--button-primary-disabled-color);
+  --button-error-background: var(--red-main);
+  --button-error-color: var(--white);
+  --button-error-hover-background: var(--red-light);
+  --button-error-focus-background: var(--red-dark);
+  --button-error-disabled-background: var(--button-primary-disabled-background);
+  --button-error-disabled-color: var(--button-primary-disabled-color);
+  --button-error-outline-background: var(--white);
+  --button-error-outline-color: var(--black);
+  --button-error-outline-border-color: var(--red-main);
+  --button-error-outline-hover-border-color: var(
+    --button-error-hover-background
+  );
+  --button-error-outline-focus-border-color: var(--red-dark);
+  --button-error-outline-disabled-border-color: var(
+    --button-error-disabled-background
+  );
+  --button-warning-background: var(--yellow);
+  --button-warning-color: var(--white);
+  --button-warning-hover-background: var(--yellow-light);
+  --button-warning-focus-background: var(--yellow-dark);
+  --button-warning-disabled-background: var(
+    --button-primary-disabled-background
+  );
+  --button-warning-disabled-color: var(--button-primary-disabled-color);
+  --button-warning-outline-background: var(--white);
+  --button-warning-outline-color: var(--black);
+  --button-warning-outline-border-color: var(--yellow);
+  --button-warning-outline-hover-border-color: var(
+    --button-warning-hover-background
+  );
+  --button-warning-outline-focus-border-color: var(--yellow-dark);
+  --button-warning-outline-disabled-border-color: var(
+    --button-warning-disabled-background
+  );
+  --button-third-background: var(--white);
+  --button-third-color: var(--gray-darker);
+  --button-third-border: 1px solid var(--white);
+  --button-third-hover-background: var(--gray-light);
+  --button-third-focus-background: var(--gray-light);
+  --button-third-focus-color: var(--gray-dark);
+  --button-third-disabled-background: var(--gray-light);
+  --button-third-disabled-color: var(--gray-dark);
+  --button-disabled-background: var(--gray-default);
+  --button-disabled-border: none;
+  --button-disabled-color: var(--white);
+  --button-light-background: var(--white);
+  --button-light-color: var(--green);
+  --button-light-border-color: var(--green);
+  --button-default-border-color: var(--gray-lighter);
+  --button-light-border-width: 1px;
+  --button-light-hover-color: var(--white);
+  --button-light-hover-background: var(--green-light);
+  --button-light-hover-border-color: var(--green-light);
+  --button-light-focus-color: var(--white);
+  --button-light-focus-background: var(--green-dark);
+  --button-light-focus-border-color: var(--green-dark);
+  --button-light-disabled-color: var(--gray-default);
+  --button-light-disabled-background: var(--white);
+  --button-light-disabled-border-color: var(--gray-lighter-2);
+  --form-field-error-size: var(--font-xxs);
+  --form-field-error-color: var(--black);
+  --form-field-error-padding: var(--gap-xs);
+  --form-field-icon-error-color: var(--error-color);
+  --form-field-icon-warning-color: var(--warning-color);
+  --form-field-gap: var(--gap-md);
+  --form-field-success-size: var(--font-xxs);
+  --form-field-success-color: var(--text-success-color);
+  --form-field-success-padding: var(--gap-sm);
+  --event-image-width: 136px;
+  --event-main-image-width: 200px;
+  --tab-color: var(--gray-dark);
+  --tab-active-color: var(--black);
+  --tab-bar-color: var(--purple-link);
+  --tab-labels-color: var(--gray-lighter-2);
+  --list-gap-web: var(--gap-sm);
+  --list-gap-mobile: var(--gap-md);
+  --list-gap-tablet: 50px;
+  --list-link-color: var(--gray-default);
+  --list-link-color-focus: var(--gray-dark);
+  --list-link-color-web: var(--gray-darker);
+  --list-link-color-focus-web: var(--gray-dark);
+  --list-link-background-focus-web: var(--gray-light);
+  --list-link-background-hover-web: var(--gray-light);
+  --list-link-color-active: var(--green);
+  --list-link-color-active-web: var(--white);
+  --list-link-backgroung-active-web: var(--green);
+  --list-link-backgroung-active-web-focus: var(--green-dark);
+  --list-link-backgroung-active-web-hover: var(--green-light);
+  --list-link-padding-vertical-web: 12px;
+  --list-link-padding-horizontal-web: var(--gap-md);
+  --list-link-border-radius-web: 8px;
+  --list-icon-margin: var(--gap-sm);
+  --list-icon-height: var(--icon-height-md);
+  --list-icon-width: var(--icon-width-md);
+  --phone-input-transition: border var(--input-transition-time) ease-in-out,
+    border-color var(--input-transition-time) ease-in-out,
+    color var(--input-transition-time) ease-in-out,
+    background-color var(--input-transition-time) ease-in-out;
+  --phone-input-background: var(--input-background);
+  --phone-input-wrapper-border-width: 1px;
+  --phone-input-wrapper-border: var(--input-border);
+  --phone-input-wrapper-focus-border: var(--input-focus-border);
+  --phone-input-wrapper-error-border: var(--error-color) !important;
+  --phone-input-wrapper-disabled-border: var(--gray-light);
+  --phone-input-search-button-gap: 15px;
+  --phone-input-search-button-background: var(--gray-light);
+  --phone-input-search-button-color: var(--black);
+  --phone-input-search-button-border-radius: var(--radius-lg) 0 0
+    var(--radius-lg);
+  --phone-input-search-button-hover-background: var(--gray-light);
+  --phone-input-search-button-focus-background: var(--gray-light);
+  --phone-input-search-button-disabled-background: var(--gray-light);
+  --phone-input-search-button-disabled-color: var(--gray-default);
+  --phone-input-code-margin-left: 20px;
+  --phone-input-code-margin-right: 0px;
+  --phone-input-code-color: var(--input-placeholder-color);
+  --phone-input-code-disabled-color: var(
+    --phone-input-component-disabled-color
+  );
+  --phone-input-component-padding-left: 5px;
+  --phone-input-component-disabled-color: var(--gray-default);
+  --phone-codes-padding: var(--gap-md) var(--gap-md) var(--gap-xs) var(--gap-md);
+  --phone-codes-border-radius: var(--gap-md);
+  --phone-codes-background: var(--gray-lighter);
+  --phone-codes-input-wrapper-gap: 18px;
+  --phone-codes-input-wrapper-padding: 6px 16px 8px 16px;
+  --phone-codes-input-wrapper-margin-bottom: 6px;
+  --phone-codes-input-wrapper-border-bottom-width: 1px;
+  --phone-codes-input-wrapper-border-bottom: var(
+      --phone-codes-input-wrapper-border-bottom-width
+    )
+    solid var(--gray-light);
+  --phone-codes-input-wrapper-color: var(--gray-dark);
+  --phone-codes-input-wrapper-focus-border-color: var(--gray-dark);
+  --phone-codes-search-icon-width: 16px;
+  --phone-codes-search-icon-height: 16px;
+  --phone-codes-input-font-size: var(--input-font-size);
+  --phone-codes-list-margin: 0;
+  --phone-codes-list-padding: var(--gap-xs) 0 0 0;
+  --phone-codes-list-gap: var(--size-xs);
+  --session-timer-padding: var(--gap-sm);
+  --session-timer-border: 1px solid var(--gray-light);
+  --session-timer-border-radius: 25px;
+  --session-timer-color: var(--gray-darker);
+  --session-timer-background: var(--white);
+  --session-timer-icon-width: 20px;
+  --session-timer-icon-height: 20px;
+  --session-timer-icon-margin-right: 8px;
+  --steps-gap: var(--gap-lg);
+  --steps-background: var(--white);
+  --steps-item-color: var(--gray-default);
+  --steps-item-focus-color: var(--gray-dark);
+  --steps-item-focus-number-background: var(--gray-dark);
+  --steps-item-hover-color: var(--gray-light);
+  --steps-item-hover-number-background: var(--gray-light);
+  --steps-item-active-color: var(--gray-darker);
+  --steps-item-active-number-background: var(--green);
+  --steps-item-active-hover-color: var(--gray-default);
+  --steps-item-active-hover-number-color: var(--green-light);
+  --steps-item-active-focus-number-color: var(--green-dark);
+  --steps-item-done-hover-icon-border-color: var(--green-light);
+  --steps-item-done-hover-icon-color: var(--green-light);
+  --steps-item-done-focus-icon-border-color: var(--green-dark);
+  --steps-item-done-focus-icon-color: var(--green-dark);
+  --steps-item-number-width: 30px;
+  --steps-item-number-height: 30px;
+  --steps-item-number-margin-right: var(--size-sm);
+  --steps-item-number-background: var(--gray-light);
+  --steps-item-number-color: var(--white);
+  --steps-item-number-line-height: 30px;
+  --steps-item-number-border-radius: 30px;
+  --steps-item-number-transition: var(--phone-input-transition);
+  --steps-item-name-margin-right: var(--gap-md);
+  --steps-item-name-transition: var(--phone-input-transition);
+  --step-item-arrow-icon-width: 12px;
+  --step-item-arrow-icon-height: 12px;
+  --step-item-arrow-icon-color: var(--gray-default);
+  --step-item-done-icon-wrapper-width: 29px;
+  --step-item-done-icon-wrapper-height: 29px;
+  --step-item-done-icon-wrapper-margin-right: var(--size-sm);
+  --step-item-done-icon-wrapper-border-radius: 30px;
+  --step-item-done-icon-wrapper-border: 1px solid var(--green);
+  --step-item-done-icon-width: 16px;
+  --step-item-done-icon-height: 10px;
+  --step-item-done-icon-color: var(--green);
+  --step-item-done-icon-transition: var(--phone-input-transition);
+  --payment-border-color: var(--gray-default);
+  --payment-border-radius: var(--radius-sm);
+  --payment-selected-border-color: var(--purple-link);
+  --set-amount-control-height: 32px;
+  --set-amount-control-width: 32px;
+  --set-amount-block-min-width: calc(3 * var(--set-amount-control-width));
+  --set-amount-button-background-color: var(--green);
+  --set-amount-button-color: var(--white);
+  --tool-tip-text-color: var(--gray-darker);
+  --table-border-width: 1px;
+  --table-border-color: var(--gray-light);
+  --table-row-hover-color: var(--gray-lighter);
+  --table-background-color: var(--block-background);
+  --table-vertical-padding: calc(var(--gap-md) - 4px);
+  --table-horizontal-padding: var(--gap-md);
+  --dialog-text-primary-color: var(--text-primary-color);
+  --dialog-min-button-width: 88px;
+  --paginator-button-color: var(--block-background);
+  --paginator-button-hovered-color: var(--peach-3);
+  --paginator-icon-color: var(--purple-link);
+  --paginator-page-item-color: var(--purple-link);
+  --paginator-selected-page-item-color: var(--purple-deep);
+}
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+.owl-carousel .owl-stage {
+  position: relative;
+  touch-action: manipulation;
+  -moz-backface-visibility: hidden;
+}
+.owl-carousel .owl-stage:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+}
+.owl-carousel .owl-item {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+.owl-carousel .owl-item.center {
+  z-index: 5;
+}
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+}
+.owl-carousel .owl-nav.disabled,
+.owl-carousel .owl-dots.disabled {
+  display: none;
+}
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-dot {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel button.owl-dot {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
+}
+.owl-carousel.owl-loaded {
+  display: block;
+}
+.owl-carousel.owl-loading {
+  opacity: 0;
+  display: block;
+}
+.owl-carousel.owl-hidden {
+  opacity: 0;
+}
+.owl-carousel.owl-refresh .owl-item {
+  visibility: hidden;
+}
+.owl-carousel.owl-drag .owl-item {
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.owl-carousel.owl-grab {
+  cursor: move;
+  cursor: grab;
+}
+.owl-carousel.owl-rtl {
+  direction: rtl;
+}
+.owl-carousel.owl-rtl .owl-item {
+  float: right;
+}
+.no-js .owl-carousel {
+  display: block;
+}
+.owl-carousel .animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.owl-carousel .owl-animated-in {
+  z-index: 0;
+}
+.owl-carousel .owl-animated-out {
+  z-index: 1;
+}
+.owl-carousel .fadeOut {
+  animation-name: fadeOut;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.owl-height {
+  transition: height 0.5s ease-in-out;
+}
+.owl-carousel .owl-item .owl-lazy {
+  transition: opacity 0.4s ease;
+}
+.owl-carousel .owl-item .owl-lazy[src^=""],
+.owl-carousel .owl-item .owl-lazy:not([src]) {
+  max-height: 0;
+}
+.owl-carousel .owl-item img.owl-lazy {
+  transform-style: preserve-3d;
+}
+.owl-theme .owl-nav {
+  margin-top: 10px;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.owl-theme .owl-nav [class*="owl-"] {
+  color: #fff;
+  font-size: 14px;
+  margin: 5px;
+  padding: 4px 7px;
+  background: #d6d6d6;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  background: #869791;
+  color: #fff;
+  text-decoration: none;
+}
+.owl-theme .owl-nav .disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 10px;
+}
+.owl-theme .owl-dots {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.owl-theme .owl-dots .owl-dot {
+  display: inline-block;
+  zoom: 1;
+}
+.owl-theme .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  background: #d6d6d6;
+  display: block;
+  -webkit-backface-visibility: visible;
+  transition: opacity 0.2s ease;
+  border-radius: 30px;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #869791;
+}
+body {
+  font-family: Roboto Regular, sans-serif;
+}
+.tickets-carousel .owl-carousel .owl-nav .owl-prev {
+  background-color: var(--black);
+}
+.tickets-carousel .owl-item {
+  display: flex;
+  justify-content: center;
+}
+.tickets-carousel .owl-item:not(.center) {
+  transform: scale(0.9);
+  animation: easeOut 0.5s ease-out;
+}
+.tickets-carousel .owl-item.active.center {
+  transform: scale(1);
+  animation: easeIn 0.5s ease-in;
+}
+@keyframes easeIn {
+  0% {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes easeOut {
+  0% {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
