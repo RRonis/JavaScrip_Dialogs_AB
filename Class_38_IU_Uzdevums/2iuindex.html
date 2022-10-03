@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./js/2iucss.css" />
+    <title>Pasūtījumu apstrāde</title>
+  </head>
+  <body>
+    <div class="alert"></div>
+    <form id="pasutijuma-forma">
+      <h3>Pasūtījuma ievades forma</h3>
+      <!-- <input type="date" name="dob" id="dob" /> -->
+      <label for="produkts">Produkts</label>
+      <select name="produkts" id="produkts" tabindex="0">
+        <option value="0">Asorti</option>
+        <option value="1">Bekona</option>
+        <option value="2">Garneļu tīģeris</option>
+        <option value="3">Kebaba</option>
+        <option value="4">Prošuto</option>
+      </select>
+      <label for="daudz">Daudzums</label>
+      <input type="number" name="daudz" id="daudz" value="1" pattern="[1-9][0-9]*" inputmode="numeric"
+        step="1" min="1" max="10" tabindex="+1" data-text-summary-count="1" />
+            
+      <button type="submit" id="submit">SUBMIT</button>
+      <button type="submit" id="save">SAVE</button>
+    </form>
+  </body>
+  <script src="./js/2iuscript.js"></script>
+</html>

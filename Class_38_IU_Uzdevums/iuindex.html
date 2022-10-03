@@ -5,74 +5,74 @@
   </head>
   
   <body>
-	
-    <div class="container">
-      <form onsubmit="pievienot()" id="jaunsPasutijums">
-        <h1>Produktu pasūtīšana</h1>
-        <div class="inputs">
-          <!-- Ppodukta izvēle un pasūtīšana:  -->
-          <span class="product-container">
-            <label>Produkts:</label>
-            <select id="product">
-              <option value="0">Asorti</option>
-              <option value="1">Bekona</option>
-              <option value="2">Garneļu tīģeris</option>
-              <option value="3">Kebaba</option>
-              <option value="4">Prošuto</option>
-            </select>
-            <label>Skaits: </label>
-                <input type="number" name="quantity" value="1" pattern="[1-9][0-9]*" inputmode="numeric" id="form-control-quantity" step="1" min="1" max="10" tabindex="+1" data-text-summary-count="1">
-            <button type="button" value="save" id="save" class="btn">Pievienot pasūtījumu</button>
-          </span>
-  
-          <!-- <label for="name">Vārds:</label>
-          <input type="text" id="name" name="name" placeholder="Enter your fullname" />
-          <small></small>
-           -->
-        </div>      
-        <div class="field">
-                  
-        </div>
-      </form>
-    </div>
-
+	    
+      <h2>Produktu pasūtīšana</h2>
+      <form id="pas-forma">
+        <!-- <input id="note-input" type="text" placeholder="+ Add Note" required /> -->
+        <span id="prod-input" class="product-container">            
+          
+          <label>Produkts:</label>
+          <select id="produkts" value="0" required>
+            <option value="0">Asorti</option>
+            <option value="1">Bekona</option>
+            <option value="2">Garneļu tīģeris</option>
+            <option value="3">Kebaba</option>
+            <option value="4">Prošuto</option>
+          </select>
+          
+          <label>Skaits: </label>
+              <input type="number" name="skaits" value="1" pattern="[1-9][0-9]*" inputmode="numeric" 
+                id="skaits" step="1" min="1" max="10" tabindex="+1" data-text-summary-count="1">
         
-    <h2>Produktu pasūtījumu tabula</h2>
+           <button id="ord-submit">Pasūtīt</button>
+        </span>
+      </form>         
+       
 
-    <table>
-      <tr>
-        <th>Produkts</th>
-        <th>Pasūtīts [gab]</th>
-        <th>Izsūtīt</th>
-      </tr>
-      <tr>
-        <td>Asorti</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Bekona</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Garneļu tīģeris</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Kebaba</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Prošuto</td>
-        <td></td>
-        <td></td>
-      </tr>      
-    </table>
+    
+          
+      <br><br><h2>Produktu pasūtījumu tabula</h2>
+      
+      <ul id="notes"></ul>
 
-    <script src="./js/iuscript.js"></script>
+    
+    <!-- <div class="container"> -->
+          
+      <h2>Produktu pasūtījumu pārskats</h2>
+      <table>
+        <tr>
+          <th>Produkts</th>
+          <th>Pasūtīts [gab]</th>
+          
+        </tr>
+        <tr>
+          <td id="pr0"></td>
+          <td id="qty0"></td>
+          
+        </tr>
+        <tr>
+          <td id="pr1"></td>
+          <td id="qty1"></td>
+          
+        </tr>
+        <tr>
+          <td id="pr2"></td>
+          <td id="qty2"></td>
+          
+        </tr>
+        <tr>
+          <td id="pr3"></td>
+          <td id="qty3"></td>
+          
+        </tr>
+        <tr>
+          <td id="pr4"></td>
+          <td id="qty4"></td>
+          
+        </tr>      
+      </table>
 
+     <script src="./js/iuscript.js"></script>
+    
    </body>
   </html>

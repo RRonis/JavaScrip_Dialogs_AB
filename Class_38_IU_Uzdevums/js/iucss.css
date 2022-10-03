@@ -5,36 +5,52 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: top;
     height: 100vh;
     font-family: 'Lato', sans-serif;
     margin: 0;
   }
 
-  h1 {
-    color: rgb(255, 255, 255);
+  input:hover {
+    background: whitesmoke;
+    color: black;
+  }
+
+  .alert {
+    width: 80vw;
+    margin: 2rem auto;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    display: none;
+  }
+
+  h2 {
+    color: rgb(219, 255, 142);
     text-align: center;
   }
 
   .container {
-    width: 70%;
+    /* width: 70%; */
+    vertical-align: top;
     background-color: #7e8e7f;
     color: rgb(129, 129, 129);
     opacity: 0.8;   
   }
 
 .inputs {
-    padding: 15px 25px 25px 45px;    
+    padding: 15px 25px 25px 45px;
+    align-items: center;
+    /* justify-content: center;     */
 }
-    .product-container {
-    background-color: #fff;
+  .product-container {
+    background-color: #fff;    
     border: 0;
     border-radius: 5px;
     font-size: 14px;
     margin-left: 10px;
-    padding: 5px 15px 5px 15px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
+    padding: 15px 35px 15px 15px;    
     appearance: none;
   }
   
